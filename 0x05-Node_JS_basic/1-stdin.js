@@ -6,9 +6,9 @@ console.log('Welcome to Holberton School, what is your name?');
 
 process.stdin.once('data', (data) => {
   const name = data.toString().trim();
-  console.log('Your name is: %s', name);
+  console.log(`Your name is: ${name}`);
   if (isInteractiveMode) {
-    // process.exit();
+    process.exit();
   } else {
     console.log('This important software is now closing');
   }
