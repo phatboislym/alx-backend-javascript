@@ -10,26 +10,17 @@ function countStudents(filepath) {
     const data = readFile(filepath, 'utf8');
     let students = data.trim().split('\n').slice(1);
     students = students.map((student) => student.split(','));
-    const SWE = [];
-    const studentsInSWE = [];
-    const CS = [];
-    const studentsInCS = [];
-    for (let i = 0; i < students.length; i += 1) {
-      if (students[i][3] === 'SWE') {
-        SWE.push(students[i]);
-        studentsInSWE.push(students[i][0]);
-      } else if (students[i][3] === 'CS') {
-        CS.push(students[i]);
-        studentsInCS.push(students[i][0]);
-      }
-    }
-    const CSCount = CS.length;
+    const SWE = students.filter((student) => student[3] === 'SWE');
     const SWECount = SWE.length;
+    const studentsInSWE = SWE.map((student) => student[0]);
+    const CS = students.filter((student) => student[3] === 'CS');
+    const CSCount = CS.length;
+    const studentsInCS = CS.map((student) => student[0]);
     const CSNames = studentsInCS.join(', ');
     const SWENames = studentsInSWE.join(', ');
-    console.log('Number of students: %s', students.length);
-    console.log('Number of students in CS: %s. List: %s', CSCount, CSNames);
-    console.log('Number of students in SWE: %s. List: %s', SWECount, SWENames);
+    console.log(`Number of students: ${students.length}`);
+    console.log(`Number of students in CS: ${CSCount}. List: ${CSNames}`);
+    console.log(`Number of students in SWE: ${SWECount}. List: ${SWENames}`);
   } catch (err) {
     throw Error('Cannot load the database');
   }
