@@ -4,9 +4,10 @@
 
 const http = require('http');
 
+const hostname = '127.0.0.1';
 const port = 1245;
 const message = 'Hello Holberton School!\n';
-const serverNotice = `server is running on port ${port}`;
+const serverNotice = `server is running at http://${hostname}:${port}`;
 const app = http.createServer((request, response) => {
   response.statusCode = 200;
   response.setHeader('Content-Type', 'text/plain');
@@ -17,7 +18,7 @@ app.on('error', (err) => {
   console.error('Server error:', err.message);
 });
 
-app.listen(port, () => {
+app.listen(port, hostname, () => {
   console.log(serverNotice);
 });
 
