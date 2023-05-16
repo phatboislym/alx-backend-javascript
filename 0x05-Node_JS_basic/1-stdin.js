@@ -8,7 +8,7 @@ process.stdin.once('data', (data) => {
   const name = data.toString().trim();
   console.log('Your name is: %s', name);
   if (isInteractiveMode) {
-    process.exit();
+    // process.exit();
   } else {
     console.log('This important software is now closing');
   }
