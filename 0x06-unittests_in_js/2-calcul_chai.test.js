@@ -1,5 +1,5 @@
 
-const calculateNumber = require('./2-calcul');
+const calculateNumber = require('./2-calcul_chai');
 const chai = require('chai');
 const expect = chai.expect;
 
