@@ -1,5 +1,5 @@
-const calculateNumber = require('./1-calcul');
 const assert = require('assert');
+const calculateNumber = require('./1-calcul');
 
 describe('calculateNumber', () => {
   it('performs operation of type param on rounded number params', () => {
@@ -11,5 +11,8 @@ describe('calculateNumber', () => {
 
     const result3 = calculateNumber('DIVIDE', 50, 25);
     assert.strictEqual(result3, 2);
+
+    const result4 = calculateNumber('DIVIDE', 5, 0.4);
+    assert.strictEqual(result4, 'Error');
   });
 });
