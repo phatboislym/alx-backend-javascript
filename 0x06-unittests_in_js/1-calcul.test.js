@@ -9,7 +9,7 @@ describe('calculateNumber', () => {
     const result2 = calculateNumber('SUBTRACT', -2.8, 1.4);
     assert.strictEqual(result2, -4);
 
-    const result3 = calculateNumber('DIVIDE', 5, 10);
-    assert.strictEqual(result3, 0.5);
+    const result3 = calculateNumber('DIVIDE', 50, 25);
+    assert.strictEqual(result3, 2);
   });
 });
